@@ -5,7 +5,6 @@
             [com.github.tamaikisage.disclourse.home :as home]
             [com.github.tamaikisage.disclourse.middleware :as mid]
             [com.github.tamaikisage.disclourse.ui :as ui]
-            [com.github.tamaikisage.disclourse.worker :as worker]
             [com.github.tamaikisage.disclourse.schema :as schema]
             [clojure.test :as test]
             [clojure.tools.logging :as log]
@@ -19,8 +18,7 @@
   [app/module
    (biff/authentication-module {})
    home/module
-   schema/module
-   worker/module])
+   schema/module])
 
 (def routes [["" {:middleware [mid/wrap-site-defaults]}
               (keep :routes modules)]
